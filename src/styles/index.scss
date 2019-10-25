@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0vh 5vw;
+  font-family: "Courier New", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(42, 35, 90);
+  color: white;
+
+  nav {
+    text-align: right;
+
+    li {
+      padding: 2vh 1.5vw;
+      margin: 0vh 0.5vw;
+      list-style-type: none;
+      display: inline-block;
+      border-bottom: 3px transparent solid;
+      color: white;
+      text-decoration: none;
+    }
+
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    li.active {
+      border-bottom: 3px orange solid;
+    }
+  }
+
+  .typewriter {
+    color: #fff;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed */
+
+    &-long {
+      @extend .typewriter;
+      animation: typing 3.5s steps(40, end), blink-caret 0.8s step-end 5;
+    }
+
+    &-long-infinite {
+      @extend .typewriter;
+      animation: typing 3.5s steps(30, end), blink-caret 0.8s step-end infinite;
+    }
+
+    &-short {
+      @extend .typewriter;
+      animation: typing 0.7s steps(6, end), blink-caret 0.5s 2;
+    }
+
+    &-short-infinite {
+      @extend .typewriter;
+      animation: typing 1s steps(30, end), blink-caret 0.5s step-end infinite;
+    }
+  }
+
+  #home {
+    padding-top: 20vh;
+  }
+}
+
+/* === A N I M A T I O N S === */
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 10px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
